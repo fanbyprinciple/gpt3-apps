@@ -11,3 +11,7 @@ Just type in the name of the artist and we'll get you the lyrics.
 
 Next : connecting flask with html
 https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-python-script-in-flask
+
+completed flask application
+
+![](music_lyrics.gif)
