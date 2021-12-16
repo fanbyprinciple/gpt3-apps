@@ -1,0 +1,27 @@
+<link rel='stylesheet' href='../static/lyrics.css' />
+<div class='header'>
+    <div class='search'></div>
+    <div class='title'>
+      <div class='sg-artist'>{{ artist }}</div>
+      <div class='sg-title'>{{ song }} </div>
+    </div>
+  </div>
+
+  <div class='content'>
+    <div class='song'>
+      <div class='text'>
+        <h1>Lyrics</h1>
+        <div class='sec'>
+            {% for para in lyrics %}
+            <div id="line">{{para}}</div>
+            {% endfor %}
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class='footer'>
+    <section></section>
+    <section></section>
+  </div>
+  

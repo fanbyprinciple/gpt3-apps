@@ -16,6 +16,7 @@ app = Flask(__name__)
 
 input_name = "Drake"
 
+
 def get_story(input_name):
     artist = input_name.strip()
     prompt_text = 'Artist: {}\n\nLyrics:\n'.format(artist)
@@ -32,23 +33,28 @@ def get_story(input_name):
     print(story)
     return story
 
+#get_story(input_name)
+
 @app.route('/lyrics', methods=['POST'])
 def answer():
-    artist = input_name.strip()
-    prompt_text = 'Artist: {}\n\nLyrics:\n'.format(artist)
+    print('answer called')
+    artist = request.form['artist']
+    song = request.form['song']
+    prompt_text = 'Artist: {}\nSong: {}\nLyrics:\n'.format(artist, song)
 
     response = openai.Completion.create(
         engine="davinci",
         prompt=prompt_text,
-        temprature=0.7,
-        max_token=256,
+        temperature=0.7,
+        max_tokens=256,
         frequency_penalty=0.5
     )
+    lyrics = response['choices'][0]['text']
+    #lyrics = lyrics.replace("\n", "<br />")
 
-    story = response['choices'][0]['text']
-    print(story)
+    lyrics = lyrics.split("\n")
 
-    return str(story)
+    return render_template('lyrics.html', lyrics=lyrics, artist=artist, song=song)
 
 @app.route('/')
 def index():

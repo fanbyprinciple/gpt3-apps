@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AI Lyrics generation</title>
+    <link rel="stylesheet" href="../static/index.css">
+
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,48 +14,21 @@
 
 </head>
 <body>
-    Hello world!
-    <!-- code to create a colorful css web form using advanced css -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Form</h3>
-                    </div>
-                    <div class="card-body">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="">Name</label>
-                                <input type="text" class="form-control" name="name" id="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" class="form-control" name="email" id="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="password" class="form-control" name="password" id="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Confirm Password</label>
-                                <input type="password" class="form-control" name="confirm_password" id="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">
-                                    <input type="checkbox" name="agree" id="">
-                                    I agree to the terms and conditions
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>  
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <div class="container">  
+        <form id="contact" action="http://localhost:5000/lyrics" method="post">
+            <h3>Input a song and an artist prompt</h3>
+            <h4>AI will generate lyrics for you</h4>
+          <fieldset>
+            <input placeholder="Artist name" type="text" name="artist" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Song name" type="text" name="song" tabindex="2" required>
+          </fieldset>
+          
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+        </form>
+      </div>   
 </body>
 </html>
