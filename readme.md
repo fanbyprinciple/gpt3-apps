@@ -15,3 +15,8 @@ https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-py
 completed flask application
 
 ![](./music_lyrics.gif)
+
+
+## GPT3 chatbot
+
+![](./gpt3_chatbox.gif)
